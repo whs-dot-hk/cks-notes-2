@@ -79,3 +79,30 @@ selector:
             name: mysecret
             key: username
 ```
+# Auditing
+* `--audit-log-maxage`
+* `--audit-log-maxbackup`
+* `--audit-log-maxsize`
+# `automountServiceAccountToken`
+```yaml
+apiVersion: v1
+kind: ServiceAccount
+metadata:
+  name: build-robot
+automountServiceAccountToken: false
+```
+```yaml
+apiVersion: v1
+kind: Pod
+metadata:
+  name: my-pod
+spec:
+  serviceAccountName: build-robot
+  automountServiceAccountToken: false
+```
+# Security context
+# Network policy
+# Admission controller
+```sh
+--enable-admission-plugins=...
+```
